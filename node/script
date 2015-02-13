@@ -1,0 +1,10 @@
+mkdir app; cd app
+$ echo '{"name": "app", "version": "1.0.0"}' > package.json
+# salva no package.json as dependências
+$ npm install lodash --save
+# nesta paosta ficam salvas as dependências
+$ ls node_modules
+# a partir daqui já podemos usar o require('lodash')
+
+$ npm install express
+
