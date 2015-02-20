@@ -8,7 +8,9 @@ Precisei fazer diversos comandos estranhos
 
 1º Configurei user name e passwd<br><br>
 2º Configurei o proxy (sem usuário e senha)<br>
+    $ git config --global http.proxy localhost:5865<br>
 3º Fiz um clone do repositorio<br>
+    $ git clone https://github.com/lu4nation/poc-showcase.git<br>
 4º Alterei codigo <br>
 5º Criei um arquivo<br>
 6º Tive que fazer add nos 2<br>
