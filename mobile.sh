@@ -37,7 +37,7 @@ fi
 export PATH=$node_mod_dir/ionic/bin:$node_mod_dir/cordova/bin:$android_home/platform-tools:$android_home/tools:$PATH 
 ionic start $myapp sidemenu
 cd $myapp
-if [ "$1" == "emulate" ]
+if [ "$1" = "emulate" ]
 then
   ionic platform add android
   ionic emulate android
