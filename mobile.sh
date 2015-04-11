@@ -23,18 +23,22 @@ if [ ! -x $node_mod_dir/cordova/bin/cordova ]
 then
   npm install cordova
 fi
-if [ ! -x $android_home/tools/android ]
+if [ ! -x $android_home/tools/android -a "$1" = "emulate" ]
 then
-  wget http://dl.google.com/android/android-sdk_r24.1.2-linux.tgz
+  if [ ! -e android-sdk_r24.1.2-linux.tgz ]
+  then
+    wget http://dl.google.com/android/android-sdk_r24.1.2-linux.tgz
+  fi
   tar xvfz android-sdk_r24.1.2-linux.tgz
   echo "Selecione:"
   echo "  - Android SDK Platform-tools"
   echo "  - Android SDK Build-tools"
   echo "  - Android 5.0.1 (API 21)"
   $android_home/tools/android
+  $android_home/tools/android avd
 fi
 
-export PATH=$node_mod_dir/ionic/bin:$node_mod_dir/cordova/bin:$android_home/platform-tools:$android_home/tools:$PATH 
+export PATH=$PATH:$node_mod_dir/ionic/bin:$node_mod_dir/cordova/bin:$android_home/platform-tools:$android_home/tools 
 ionic start $myapp sidemenu
 cd $myapp
 if [ "$1" = "emulate" ]
