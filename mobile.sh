@@ -45,6 +45,10 @@ then
   fi
 fi
 
+# ubuntu 14.04.02
+# sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
+# sudo apt-get install ant
+
 export PATH=$PATH:$node_mod_dir/ionic/bin:$node_mod_dir/cordova/bin:$android_home/platform-tools:$android_home/tools 
 ionic start $myapp sidemenu
 cd $myapp
