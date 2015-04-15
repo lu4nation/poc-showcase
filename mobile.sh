@@ -7,6 +7,7 @@
 
 homedir=$(pwd)/mobile
 myapp=${2:-myapp}
+template=${3:-sidemenu}
 
 if [ -d $homedir ]
 then
@@ -51,7 +52,7 @@ then
 fi
 
 export PATH=$PATH:$node_mod_dir/ionic/bin:$node_mod_dir/cordova/bin:$android_home/platform-tools:$android_home/tools 
-ionic start $myapp sidemenu
+ionic start $myapp $template
 cd $myapp
 if [ "$1" = "emulate" ]
 then
